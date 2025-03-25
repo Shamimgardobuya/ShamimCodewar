@@ -95,11 +95,13 @@ def get_max_sum_of_columns(board):
     #     column_list = (sum([ row[col] for row in board ]), col)
     #     max_sum , index = max(column_list), col
     # return index, max_sum
-# def get_max_sum_of_columns(board):
-#     for col in range(len(board[0])):
-#         column_list = (sum([ row[col] for row in board ]), col)
-#         max_sum , index = max(column_list), col
-#     return index, max_sum
+#problems with this approach
+
+def get_max_sum_of_columns(board):
+    for col in range(len(board[0])):
+        column_list = (sum([ row[col] for row in board ]), col)
+        max_sum , index = max(column_list), col
+    return index, max_sum
 
 print(get_max_sum_of_columns(
     [
