@@ -102,7 +102,7 @@ def to_roman(val: int) :
 def to_number(roman:str) :  #not utilizing recursion fully and mostly works for romans that are already in the dictionary 
     if (roman in roman_numerals):
         return roman_numerals[roman]
-    roman =  list(roman)
+    # roman =  list(roman)
     ans = 0
 
     for i in roman:
@@ -114,14 +114,15 @@ def to_number(roman:str) :  #not utilizing recursion fully and mostly works for 
 #better way to utilize recursion
 def to_number_by_recursion(roman: str) :
     #base case
+    # if (roman in roman_numerals):
+    #     return roman_numerals[roman]
     if (not roman) :
         return 0
     #another base case
     if (len(roman) == 1):
-        return roman_numerals['roman']
-    
-    roman = list(roman)
-    
+        print(roman)
+        return roman_numerals[roman]
+        
     first = roman_numerals[roman[0]]
     second  = roman_numerals[roman[1]]
     
@@ -131,7 +132,7 @@ def to_number_by_recursion(roman: str) :
         return first + to_number_by_recursion(roman[1:])
 
 
-print(to_number_by_recursion("MMMCCXLIX"))
+print(to_number_by_recursion("VI"))
 
 #fully utilizing Recursion
 # 
