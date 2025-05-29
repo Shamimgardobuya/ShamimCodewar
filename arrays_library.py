@@ -18,7 +18,7 @@ class Cons:
         head = arr[0]
         tail = arr[1:]
         #TODO: convert a Python list to a cons list.
-        return Cons(head, Cons.from_array(tail))
+        return cls(head, cls.from_array(tail))
     
     def filter(self, fn):
         return   self.from_array(list(filter( fn, self.to_array())))
