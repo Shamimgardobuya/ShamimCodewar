@@ -1,4 +1,5 @@
 import unittest
+import functools
 
 class Cons:
     def __init__(self, head, tail):
@@ -27,18 +28,18 @@ class Cons:
         
         #TODO: construct a new algebraic list containing all elements
         #      resulting from applying the mapper function to a list.
+    def reduce(self, fn):
+        return functools.reduce(fn,self.to_array() )
 
 print(Cons.from_array([]))
 # arr_ = Cons.from_array([1,2,3,4,5])
 # print(arr_.to_array())
-# print(Cons.from_array([1,2,3,4,5])
-#                            .filter(lambda n: n > 3)
-#                          .to_array())
+print(Cons.from_array([1,2,3,4,5])
+                           .reduce(lambda x, y: x + y ))
 
-print(Cons.from_array(["1","2","3","4","5"])
-                            .map(int)
-                            .to_array()
-                            )
+# print(Cons.from_array(["1","2","3","4","5"])
+#                             .reduce(int)
+#                             )
 # class TestArrFunction(unittest.TestCase):
 
 
